@@ -1,0 +1,270 @@
+:root {
+  --primary: #7b2ff7;
+  --secondary: #f107a3;
+  --bg-light: #faf7ff;
+  --text-dark: #222;
+  --white: #fff;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+/* Smooth color transitions */
+body, header, section, footer, .project-card, .btn {
+  transition: background 0.4s ease, color 0.4s ease, border 0.4s ease;
+}
+
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 8%;
+  background: var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo span {
+  color: var(--secondary);
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 8%;
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, #ffffff, #f2e6ff);
+}
+
+.hero-text {
+  flex: 1 1 45%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.hero-img img {
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(123, 47, 247, 0.2);
+}
+
+/* SECTIONS */
+section {
+  padding: 5rem 8%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ABOUT */
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.links {
+  margin-bottom: 1.5rem;
+}
+
+.btn.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  margin: 0 0.5rem;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn.outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* CONTACT */
+#contact p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f9f2ff;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-img img {
+    width: 180px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+}
+/* === DARK MODE === */
+body.dark-mode {
+  background: #1a1a1a;
+  color: #f3f3f3;
+}
+
+body.dark-mode header {
+  background: #222;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .btn {
+  background: #bb86fc;
+  color: white;
+}
+
+body.dark-mode .btn:hover {
+  background: #9b5de5;
+}
+
+body.dark-mode .project-card {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+/* Fix hero section for dark mode */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+}
+
+body.dark-mode .hero-text h1 span {
+  color: #bb86fc; /* keeps your purple accent visible */
+}
+
+body.dark-mode .hero-text p {
+  color: #ddd;
+}
+
+body.dark-mode .hero-img img {
+  filter: brightness(85%);
+}
+/* === FOOTER DARK MODE === */
+body.dark-mode footer {
+  background: #111;
+  color: #ccc;
+  border-top: 1px solid #333;
+}
